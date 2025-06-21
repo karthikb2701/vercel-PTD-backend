@@ -26,7 +26,7 @@ const app = express()
 // Enable CORS for frontend (Replace with your frontend URL)
 app.use(
   cors({
-    origin: "l.https://vercel-ptd-frontend.verceapp", //frontend URL
+    origin: "https://vercel-ptd-frontend.vercel.app", //frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"], // Allow CRUD operations
     credentials: true, // Allow cookies & authorization headers
   })

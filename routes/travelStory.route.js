@@ -21,7 +21,7 @@ router.delete("/delete-image", deleteImage)
 
 router.post("/add", verifyToken, addTravelStory)
 
-router.get("/get-all", getAllTravelStory)
+router.get("/get-all", verifyToken, getAllTravelStory)
 
 router.post("/edit-story/:id", verifyToken, editTravelStory)
 

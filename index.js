@@ -26,7 +26,7 @@ const app = express()
 // Enable CORS for frontend (Replace with your frontend URL)
 app.use(
   cors({
-    origin: "https://vercel-ptd-frontend.vercel.app", //frontend URL
+    origin: "http://localhost:5173", //frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"], // Allow CRUD operations
     credentials: true, // Allow cookies & authorization headers
   })
@@ -37,9 +37,15 @@ app.use(cookieParser())
 // for allowing json object in req body
 app.use(express.json())
 
-app.listen(process.env.PORT, () => {
-  console.log("Server is running on port 3000!")
-})
+// app.listen(process.env.PORT, () => {
+//   console.log("Server is running on port 3000!")
+// })
+
+
+export default (req, res) => {
+  app(req, res);
+};
+
 
 app.use("/api/auth", authRoutes)
 app.use("/api/user", userRoutes)
